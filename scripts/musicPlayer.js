@@ -104,5 +104,12 @@ export const musicPlayerInit = () => {
         const progress = (x / allWidth) * audioPlayer.duration;
         audioPlayer.currentTime = progress;
     });
+
+    musicPlayerInit.stop = () => {
+        audioPlayer.pause();
+        audioButtonPlay.classList.remove('fa-pause');
+        audioButtonPlay.classList.add('fa-play');
+        audio.classList.remove('play');
+    }
     
 }

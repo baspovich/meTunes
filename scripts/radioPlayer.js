@@ -60,5 +60,13 @@ export const radioPlayerInit = () => {
 
     radioVolume.addEventListener('input', () => {
         audio.volume = radioVolume.value / 100;
-    });    
+    });
+    
+    radioPlayerInit.stop = () => {
+        audio.pause();
+
+        radio.classList.remove('play');
+        radioStop.classList.add('fa-play');
+        radioStop.classList.remove('fa-stop');
+    }
 }

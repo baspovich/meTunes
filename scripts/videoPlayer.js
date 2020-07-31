@@ -35,9 +35,8 @@ export const videoPlayerInit = () => {
         videoPlayer.pause();
         videoPlayer.currentTime = 0;
     }
-
-                
-                
+    
+        
     videoPlayer.addEventListener('click', togglePlay);
     videoButton.addEventListener('click', togglePlay);
                     
@@ -70,5 +69,11 @@ export const videoPlayerInit = () => {
     videoVolume.addEventListener('input', () => {
         videoPlayer.volume = videoVolume.value / 100;
     });
+
+    videoPlayerInit.stop = () => {
+        videoPlayer.pause();
+        videoButtonPlay.classList.remove('fa-pause');
+        videoButtonPlay.classList.add('fa-play');
+    }
 
 }
